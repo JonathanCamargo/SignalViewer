@@ -1,0 +1,48 @@
+#:kivy 1.0.9
+
+<guiLayout>:
+    #widget_a: widget_a_id
+    #using grid layout for arranging child widgets
+    rows: 2
+    cols: 2
+    #widget_a: widget_a_id
+
+    canvas:           
+
+    #Title       
+    Button:
+        size_hint_x: 1
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "GUI test"
+   
+    Button:
+        size_hint_x: 1
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "GUI test2"
+
+    Button:
+        size_hint_x: None #Using None here makes the button size the default (100)
+        size_hint_y: None        
+        font_size: 70
+        center: self.parent.center
+        #top: root.top  #This does not work for GridLayout?
+        pos_hint_top: 0.5 #This does not work for GridLayout?
+        text: "GUI test3"
+
+    Button:
+        size_hint_x: None
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "GUI test4"
+
+
+
+
+
+
+

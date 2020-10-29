@@ -1,0 +1,41 @@
+#:kivy 1.0.9
+
+<ErisBar>:
+    run_btn: run_btn_id
+    port_spnr: port_ddwn_id
+    eris_text: text_out_id
+    cols:3
+    rows:3
+    # Top Buttons
+
+    Label:
+        size_hint_x:0.2
+        text: "Eris@:"
+
+    Spinner:
+        id: port_ddwn_id
+        size_hint_x:0.6       
+        canvas:              
+
+    Button:
+        size_hint_x:0.2
+        id: run_btn_id
+        canvas:
+        text: "Run"
+        on_press: self.parent.run_callback()
+
+    Label:
+        size_hint_x:0.2
+        text:"Eris Serial Com"
+
+    TextInput:
+        id: text_out_id
+        size_hint_x:0.6
+        canvas:
+
+    Button:
+        id: send_command_id
+        size_hint_x:0.2
+        canvas:
+        text: "Send Command"
+        on_press: self.parent.scmd_callback(self)

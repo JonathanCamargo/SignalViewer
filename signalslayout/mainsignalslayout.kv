@@ -1,0 +1,19 @@
+#:kivy 1.0.9
+#:include signalslayout/viewer.kv
+
+<MainSignalsLayout>: 
+    cols: 1
+    rows: 1
+    
+    canvas:
+        Color:
+            rgba: bg_1
+        Rectangle:
+            size: root.size
+            pos: root.pos
+    
+    # FIRST ELEMENT: SignalViewer
+    SignalViewer:
+    
+
+

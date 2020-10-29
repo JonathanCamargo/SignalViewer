@@ -1,0 +1,49 @@
+digraph G {
+compound=true;
+node [shape=box];
+subgraph cluster_0 {
+URL="/gait";
+label="FSM[gait]";
+"0start" [shape=point];
+subgraph cluster_1 {
+URL="/gait/WaitState";
+label=WaitState;
+2 [URL="/gait/WaitState/WaitState_Entrypoint", label="TASK[WaitState_Entrypoint]", penwidth=0];
+}
+
+subgraph cluster_3 {
+URL="/gait/EarlyStance";
+label=EarlyStance;
+4 [URL="/gait/EarlyStance/EarlyStance_Entrypoint", label="TASK[EarlyStance_Entrypoint]", penwidth=0];
+}
+
+subgraph cluster_5 {
+URL="/gait/LateStance";
+label=LateStance;
+6 [URL="/gait/LateStance/LateStance_Entrypoint", label="TASK[LateStance_Entrypoint]", penwidth=0];
+}
+
+subgraph cluster_7 {
+URL="/gait/SwingFlexion";
+label=SwingFlexion;
+8 [URL="/gait/SwingFlexion/SwingFlexion_Entrypoint", label="TASK[SwingFlexion_Entrypoint]", penwidth=0];
+}
+
+subgraph cluster_9 {
+URL="/gait/SwingExtension";
+label=SwingExtension;
+10 [URL="/gait/SwingExtension/SwingExtension_Entrypoint", label="TASK[SwingExtension_Entrypoint]", penwidth=0];
+}
+
+}
+
+"0start" -> 2  [fontsize=8, lhead=cluster_1];
+2 -> 4  [fontsize=8, label="/EarlyStance", lhead=cluster_3, ltail=cluster_1];
+2 -> 6  [fontsize=8, label="/LateStance", lhead=cluster_5, ltail=cluster_1];
+2 -> 8  [fontsize=8, label="/SwingFlexion", lhead=cluster_7, ltail=cluster_1];
+2 -> 10  [fontsize=8, label="/SwingExtension", lhead=cluster_9, ltail=cluster_1];
+4 -> 6  [fontsize=8, label="/T1", lhead=cluster_5, ltail=cluster_3];
+6 -> 8  [fontsize=8, label="/T2", lhead=cluster_7, ltail=cluster_5];
+8 -> 10  [fontsize=8, label="/T3", lhead=cluster_9, ltail=cluster_7];
+10 -> 4  [fontsize=8, label="/T4", lhead=cluster_3, ltail=cluster_9];
+}

@@ -1,0 +1,28 @@
+#Autoselect functions are created to define hardcoded defaults
+#depending on topic name and topic type for convenience.
+
+
+from customwidgets.text import TextWidget
+from customwidgets.plot import PlotWidget
+
+def WidgetSelector(topic_type):
+#returns the default plot type for a certain topic type
+	selections={
+	'custom_msgs/FsmState' : TextWidget
+	}
+	
+	return selections.get(topic_type,PlotWidget)
+
+
+def AutoSelect(topic_name):
+#returns whether or not a topic name should be selected automatically
+	
+	selections={
+	'/fsm/State' : False,
+	'/ankle/JointState': True,
+	'/knee/JointState': True,
+	'/loadcell/wrench': True
+	}
+
+	return selections.get(topic_name,False)
+

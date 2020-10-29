@@ -1,0 +1,17 @@
+[
+{"type": "string",
+"title": "Subject ID",
+"section": "section1",
+"key": "SubjectID"
+},
+{"type": "string",
+"title": "WorkspacePath",
+"section": "section1",
+"key": "path"
+},
+{"type": "string",
+"title": "ROS Namespace",
+"section": "section2",
+"key": "rosNamespace"
+}
+]

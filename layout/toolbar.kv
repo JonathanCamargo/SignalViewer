@@ -1,0 +1,109 @@
+#:kivy 1.0.9
+
+<Toolbar>:
+    record_btn: record_btn_id
+    signal_btn: signals_btn_id
+    rosbag_input: rosbag_input_id  
+    duration_input: duration_input_id 
+ 
+    cols:1
+    rows:3
+    # Top Buttons
+    GridLayout:
+        cols: 5
+        rows: 1
+        padding: 10,10,10,10 
+        size_hint_y: None
+        height: self.parent.height * 0.3
+
+        canvas:
+            Color:
+                rgba: bg_3
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    
+        Button:
+            canvas:
+            text: "open"
+            on_press: self.parent.parent.open_callback()
+
+        Button:
+            canvas:     
+            text: "save"  
+            on_press: self.parent.parent.save_callback()
+
+        Button:
+            canvas:
+            text: "settings"
+            on_press: self.parent.parent.settings_callback(self)
+               
+        
+        Button:
+            id: signals_btn_id
+            canvas:
+            text: "signals"
+            on_press: self.parent.parent.signal_viewer_callback()
+
+    # Naming Box
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 10,10,10,10 
+        size_hint_y: None
+        height: self.parent.height * 0.3
+
+        canvas:
+            Color:
+                rgba:  bg_3
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            size_hint_x:0.3
+            text:"Bag:"
+
+        TextInput:
+            id: rosbag_input_id
+            canvas:
+            multiline: False
+            #on_text_validate: self.parent.parent.textbox_callback
+            #self.insert_text("Focus")
+
+        Button:
+            id: record_btn_id
+            size_hint_x:0.3
+            canvas:
+            text: "record"
+            on_press: self.parent.parent.record_callback(self)
+
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 10,10,10,10 
+        size_hint_y: None
+        height: self.parent.height * 0.3
+
+        canvas:
+            Color:
+                rgba:  bg_3
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            size_hint_x:0.3
+            text:"Duration (min):"
+
+        Slider:
+            id: duration_sldr_id
+            canvas:
+            min: 1
+            max: 60
+            value: 1
+
+        TextInput:
+            id: duration_input_id
+            size_hint_x:0.3
+            canvas:
+            text: str(int(duration_sldr_id.value))
+            

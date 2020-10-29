@@ -1,0 +1,35 @@
+#:kivy 1.0.9
+
+<ChannelCheckBox>:
+    checkbox: checkbox_id
+    label: label_id
+    CheckBox:
+        id: checkbox_id
+        color: 0,0,0,1
+    Label:
+        id: label_id
+        color: 0,0,0,1
+
+
+<PlotWidget>:
+    channel_selector: channel_selector_id
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba:  1,1,1,1
+        Rectangle:
+            size: self.size   
+            pos: self.pos        
+
+    BoxLayout:
+        id: channel_selector_id
+        orientation: 'vertical'
+        size_hint: 0.1,1
+        pos: self.parent.pos
+        canvas.before:
+            Color:
+                rgba: 1,1,1,0
+            Rectangle:
+                size: self.size
+                pos: self.pos        
+

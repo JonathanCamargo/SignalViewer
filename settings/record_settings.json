@@ -1,0 +1,12 @@
+[
+{"type": "string",
+"title": "mierda",
+"section": "section1",
+"key": "SubjectID"
+},
+{"type": "recordselector",
+"title": "WorkspacePath",
+"section": "section1",
+"key": "path"
+}
+]

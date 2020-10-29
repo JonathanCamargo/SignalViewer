@@ -1,0 +1,39 @@
+#:kivy 1.0.9
+#:include layout/toolbar.kv
+#:include layout/erisbar.kv
+#:include layout/optionsdialog.kv
+#:include layout/filechoosing.kv
+
+
+<MainLayout>: 
+    toolbar: toolbar_id
+    erisbar: erisbar_id
+
+    cols: 1
+    rows: 2
+    padding: 10,10,10,10
+    canvas:
+        Color:
+            rgba: bg_1
+        Rectangle:
+            size: root.size
+            pos: root.pos
+    
+    GridLayout:
+        cols: 1
+        rows: 2
+        canvas:
+        
+        
+        # FIRST ELEMENT: TOOLBAR
+        Toolbar:
+            id: toolbar_id
+            size_hint_y: None
+            height: self.parent.height * 0.66
+            
+        
+        # FIRST ELEMENT: TOOLBAR
+        ErisBar:
+            id: erisbar_id
+            size_hint_y: None
+            height: self.parent.height * 0.33

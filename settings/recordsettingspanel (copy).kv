@@ -1,0 +1,56 @@
+#:kivy 1.0.9
+
+<RecordSelector>:
+    id: recordselector_id
+    checkboxes: checkboxes_id
+    filter_input: filter_input_id
+    orientation: 'vertical'
+    padding: 10,10,10,10
+    canvas:
+        Color:
+            rgba:  bg_2
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    center: self.parent.center
+    top: root.top
+    
+    # FILTER BOX
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 10,10,10,10 
+        pos: self.parent.pos
+        size_hint: 1,0.3
+        canvas:
+            Color:
+                rgba:  bg_1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            size_hint_x:0.2
+            text:"Filter:"
+
+        TextInput:
+            id: filter_input_id
+            canvas:
+            multiline: False
+        
+    # CHECKBOXES
+    GridLayout:
+        id: checkboxes_id
+        rows: 10
+        cols: 10
+        padding: 10,10,10,10
+        canvas:
+            Color:
+                rgba:  bg_2
+            Rectangle:
+                size: self.size    
+                pos: self.pos
+
+
+        
+
+

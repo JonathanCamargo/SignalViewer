@@ -1,0 +1,30 @@
+#:kivy 1.0.9
+
+<OptionsDialog>:
+    
+    title_lbl: title_id
+    paramsholder: paramsholder_id
+    size: 400,400
+    size_hint: None,None
+    
+                
+    canvas:
+
+    BoxLayout:        
+        orientation: 'vertical'
+        padding: 5,5,5,5
+        size:self.parent.size
+        pos:self.parent.pos
+	
+        Label:
+            size_hint_y: 0.1
+            id: title_id
+            text: 'Title'
+	
+
+        #FOR HOLDING Label/textbox pairs        
+        BoxLayout:
+            id: paramsholder_id
+            orientation: 'vertical'
+            size: self.parent.size
+            pos: self.parent.pos

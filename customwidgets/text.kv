@@ -1,0 +1,57 @@
+#:kivy 1.0.9
+
+
+<CustomLabel>:
+    size: self.texture_size   
+    font_size: 16	
+    canvas.before:
+        Color:
+            rgba: 0.1,0.1,0.1,0.1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+<TextWidget>:
+    channel_box: channel_box_id
+    data_box: data_box_id
+
+    canvas.before:
+    
+    BoxLayout:
+        orientation: 'horizontal'
+        size: self.parent.size
+        pos: self.parent.pos
+        canvas.before:
+            Color:
+                rgba:  1,1,0,0
+            Rectangle:
+                size: self.size
+                pos: self.pos            
+       
+        BoxLayout:
+            id: channel_box_id
+            orientation: 'vertical'
+            size: 100,100
+            canvas.before:
+                Color:
+                    rgba:  0,0,0,0.8
+                Rectangle:
+                    size: self.size
+                    pos: self.pos            
+                         
+            
+        BoxLayout:
+            size: 100,100
+            id: data_box_id
+            orientation: 'vertical'
+            canvas.before:
+                Color:
+                    rgba:  0,0,0,0.8
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        
+
+    
+           

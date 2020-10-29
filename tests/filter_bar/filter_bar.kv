@@ -1,0 +1,37 @@
+#:kivy 1.0.9
+
+
+
+<InputLayout>
+    orientation: 'vertical'
+    canvas:
+    input: input_id
+    size:1,100
+    size_hint:1,None
+    TextInput:
+        size:self.parent.size
+        id: input_id
+        center: self.parent.center
+
+    
+<guiLayout>:
+    canvas:    
+    grid: grid_layout_id
+
+    #Title       
+    Label:
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "Filter test"
+
+    InputLayout:
+
+
+    GridLayout:
+        cols:1
+        rows:20
+        id: grid_layout_id
+        center:self.parent.center
+        top: root.top
+

@@ -1,0 +1,58 @@
+#:kivy 1.0.9
+
+#:include ../../customwidgets/text.kv
+#:include ../../customwidgets/plot.kv
+
+<guiLayout>:
+    widget_a: widget_a_id
+    widget_b: widget_b_id
+    #using grid layout for arranging child widgets
+    rows: 2
+    cols: 2
+    
+    canvas:           
+
+    #Title       
+    Button:
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "GUI test"
+   
+    TextWidget:
+        id: widget_a_id     
+        canvas.before:
+            Color:
+                rgba:  0,1,0,1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        center: self.parent.center
+        top: root.top
+       
+	
+    PlotWidget:
+        id: widget_b_id     
+        canvas.before:
+            Color:
+                rgba:  0,1,0,1
+            Rectangle:
+                size: self.width*0.8,self.height*0.8
+                pos: self.pos
+        center: self.parent.center
+        top: root.top
+       
+
+
+    Button:
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "GUI test4"
+
+
+
+
+
+
+

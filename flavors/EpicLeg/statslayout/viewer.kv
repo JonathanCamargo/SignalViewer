@@ -1,0 +1,46 @@
+#:kivy 1.0.9
+
+#:include customwidgets/text.kv
+
+#:include customwidgets/plot.kv
+
+<SignalViewer>:
+    #Widget elements id
+    signaldisplay: signaldisplay_id
+    label: label_id
+    cols: 1
+    rows: 2
+    padding: 10,10,10,10 
+    size_hint_y: None
+    height: self.parent.height
+    canvas:
+        Color:
+            rgba:  bg_1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    # PLOTS
+    SignalDisplay: 
+        id: signaldisplay_id
+        rows: 10
+        cols: 10
+        padding: 10,10,10,10
+        size_hint_y: None
+        height: self.parent.height * 0.9
+        canvas:
+            Color:
+                rgba:  bg_2
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    Label:
+        id: label_id
+        text: 'Ambulation mode:'
+    
+        
+
+
+                
+
+       

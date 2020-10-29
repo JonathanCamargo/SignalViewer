@@ -1,0 +1,37 @@
+#:kivy 1.0.9
+
+<Xlabel>
+    canvas:
+    Label:
+        font_size: 50
+        center: self.parent.center
+        top: root.top
+        text: str(self.parent.value)
+
+<FloatWidget>
+    canvas:
+    xlabel: xlabel_id
+ 
+    Xlabel:
+        id: xlabel_id
+        center: self.parent.center
+    
+<guiLayout>:
+    canvas:    
+    roswidget: roswidget_id
+    floatwidget: floatwidget_id
+
+    #Title       
+    Label:
+        font_size: 70
+        center: self.parent.center
+        top: root.top
+        text: "GUI test"
+
+    FloatWidget:
+        id: floatwidget_id
+        center:self.parent.center
+        top: root.top
+
+    ROSWidget:
+        id: roswidget_id
